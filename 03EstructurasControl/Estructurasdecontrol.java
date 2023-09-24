@@ -24,15 +24,19 @@ import java.util.Scanner;
 
 class EstructurasControl{
 //si declaramos aqui las variables son globales
-     public static void main(String[] args){
+     /**
+     * @param args
+     */
+    public static void main(String[] args){
      try (//el manejo de objeto, nos ayuda a poder instancear,(mandando a llamar al objeto)
               //para hacer una instancia, es necesario 1- indentificar el tipo de objeto
               //2-nombrar al objeto
               //3-Crear al objeto
         Scanner entrada = new Scanner(System.in)) {
-            int opcion, numbinario, cantidadproducto, num1, compra1=0, edad, n1=0, n2=0, n3=0, n4=0;
+            int lado1, lado2, lado3, radio, radio1, volumen, radio2, cilindro=0, radio3, altura2=0, area1, base1,altura1, perimetro1;
+            int opcion, numbinario, cantidadproducto, num1, compra1=0, edad, n1=0, n2=0, n3=0, n4=0, area, perimetro, base, altura=0;
             double total; ;
-              float precio, resultado = 0, compra = 0, Celsius, Fahrenheit ;
+              float precio, resultado = 0, compra = 0, Celsius, Fahrenheit;
               double Kelvin;
               double Rankine;
               String nombreproducto;
@@ -63,9 +67,9 @@ class EstructurasControl{
                     int n;
                     //menu
                     switch(opcion){
-                        case 1:
+                           case 1:
 
-                           System.out.println("El Total de su Compra es: "+ compra1);
+                           System.out.println("El Total de su Compra es: " +compra1);
                            System.out.println("Se Aplica un Descuento si es Mayor de Edad o Socio");
                            System.out.println("Ingrese su Edad: ");
                            edad = entrada.nextInt();
@@ -81,16 +85,16 @@ class EstructurasControl{
                             if(opcion == 1){
                            System.out.println("El Cliente: "+ letra+" Se le Aplica el Descuento del 45%");
                            total = (float) (compra1 * 0.45);
-                           System.out.println("Su Total con Descuento es: "+total);
+                           System.out.println("Su Total con Descuento es: " + total);
                            }else if(opcion == 2){
-                           System.out.println("Los Padres del Cliente: "+letra+" No son Socios");
+                           System.out.println("Los Padres del Cliente: "+ letra +" No son Socios");
                            System.out.println("Por lo cual solo se Aplicara el Descuento del 25%");
-                            total = compra1 * 0.25;
-                           System.out.println("Su Total con Descuento es: "+total);
+                            total = (compra1 * 0.25);
+                           System.out.println("Su Total con Descuento es: "+ total);
                            }
                            }else if(edad >= 65){
                            System.out.println("Al Cliente: "+letra+" Se le Aplicara un Descuento del 40%");
-                           total = compra1 * 0.40;
+                           total = (compra1 * 0.40);
                            System.out.println("Su Total con Descuento es: "+total);
 
                            }else if(edad > 21 && edad < 65){
@@ -110,15 +114,15 @@ class EstructurasControl{
                            System.out.println("Su Total con Descuento es: " +total);
                            }
                            }
-                        break;
-                        case 2:
-
-                         //decimal a binario
-                          System.out.println("Ingresa un Numero Positivo Entero que Desee Convertir a Binario");
-                          numbinario = entrada.nextInt();
-                          //primero tengo que saber que sea positivo
-                          if(numbinario > 0){
-                             //se cuantas veces el numero se va a dividir entre 2?
+                             break;
+                             case 2:
+ 
+                              //decimal a binario
+                              System.out.println("Ingresa un Numero Positivo Entero que Desee Convertir a Binario");
+                              numbinario = entrada.nextInt();
+                               //primero tengo que saber que sea positivo
+                               if(numbinario > 0){
+                                //se cuantas veces el numero se va a dividir entre 2?
                                  while (numbinario%2 == 0){
 
                                 if(numbinario%2 == 0);{
@@ -149,15 +153,15 @@ class EstructurasControl{
                         int conversion = entrada.nextInt();
 
                         switch (conversion) {
-                        case 1:
+                        case 15:
                             Celsius = (Fahrenheit - 32) * 5 / 9;
                             System.out.println("La temperatura en grados Celsius es: " + Celsius);
                             break;
-                        case 2:
+                        case 16:
                             Kelvin = ((Fahrenheit - 32) * 5 / 9 + 273.15);
                             System.out.println("La temperatura en Kelvin es: " + Kelvin);
                             break;
-                        case 3:
+                        case 17:
                             Rankine = Fahrenheit + 459.67;
                             System.out.println("La temperatura en Rankine es: " + Rankine);
                             break;
@@ -215,37 +219,102 @@ class EstructurasControl{
                        compra = 0;
                       break;
                         
-                        case 6:
-                        break;
-                        case 7:
-                        break;
-                        case 8:
-                        break;
-                        case 9:
-                        break;
-                        case 10:
-                        break;
-                        case 11:
-                        break;
-                        case 12:
-                        break;
-                        case 13:
-                        break;
-                        case 14:
-                        break;
-                        default:
+                      case 6:
+                           
+                             System.out.print("1.- Area y perimetro de un rectangulo.");
+                             System.out.print("2.- Area y perimetro de un triangulo.");
+                             System.out.print("3.- Volumen de una esfera.");
+                             System.out.print("4.- Volumen de un cilindro.");
+                         
+                             System.out.print("Ingrese 1, 2, 3 o 4 dependiendo lo que desea elegir:");
+                             int eleccion = entrada.nextInt();
+
+                            if(eleccion == 1){
+                              System.out.println("Usted eligio la opcion 1");
+                              System.out.println("Ingrese la base del rectangulo: ");
+                              base1 = entrada.nextInt();
+                              System.out.println("Ingrese la altura del rectangulo: ");
+                              altura1 = entrada.nextInt();
+                              area1 = base1 * altura1;
+                             perimetro1 = (base1 +altura1) * 2;
+                             System.out.println("El area del rectangulo es :" +area1+" cm2");
+                             System.out.println("El perimetro del rectangulo es:" +perimetro1+ "cm");
+                              break;
+                            }
+                            
+                            
+
+                            if (eleccion == 2){
+                              System.out.println("Usted eligio la opcion 2");
+                             System.out.println("Ingrese la medida del primer lado del tringulo:");
+                             lado1= entrada.nextInt();
+                              System.out.println("Ingrese la medida del segundo lado del tringulo:");
+                             lado2= entrada.nextInt();
+                             System.out.println("Ingrese la medida de la base del tringulo:");
+                             base = entrada.nextInt();
+                             System.out.println("Ingrese la altura del triangulo: ");
+                             int altura3 = entrada.nextInt();
+
+                             area = (base * altura3) /2;
+                             perimetro = (lado1+ lado2+ base);
+                              System.out.println("El area del rectangulo es :" +area+" cm2");
+                             System.out.println("El perimetro del rectangulo es:" +perimetro+ "cm");
+                             break;
+                            }
+                            
+
+                             if(eleccion == 3){
+                              System.out.println("Usted eligio la opcion 3");
+                             System.out.println("Ingrese el radio de la esfera: ");
+                             radio = entrada.nextInt();
+                             radio1 = (radio*radio*radio);
+                              volumen = (int) (4/3*3.1416*radio1);
+                              System.out.println("El volumen de la esfera es: " +volumen);
+                              break;
+                             }
+                             
+
+                             if (eleccion == 4){
+                              System.out.println("Usted eligio la opcion 4");
+                              System.out.println("Ingrese el radio del cilindro: ");
+                              radio2 = entrada.nextInt();
+                              System.out.println("Ingrese la altura del cilindro:");
+                              int altura3 = entrada.nextInt();
+                              radio3 =(radio2*radio2);
+                              int volumen2 = (int) (3.1416*radio3*altura3);
+
+                              System.out.println("El volumen del cilindro es:" +volumen2);
+                              break;
+                           } 
+                             case 7:
+                             break;
+                             case 8:
+                             break;
+                             case 9:
+                             break;
+                             case 10:
+                             break;
+                             case 11: 
+                             break;
+                             case 12:
+                             break;
+                             case 13: 
+                             break;
+                             case 14:
+                             break;
+                             default:
                              System.out.println("Elije la opcion");
                               break;
 
 
 
-                    }
+                            }
                   
 
-                System.out.println("Desea repetir el programa?, escribe s para si");
-                letra = entrada.next().charAt(0);
+                             System.out.println("Desea repetir el programa?, escribe s para si");
+                              letra = entrada.next().charAt(0);
 
-              }while(letra == 's' || letra == 'S');
+                             }while(letra == 's' || letra == 'S');
         }
 
       //es declarar a las variables que se van a utilizar en el programa 
@@ -253,5 +322,9 @@ class EstructurasControl{
       //si la declaro dentro del metodo es local
 
      }
+
+    private static int nextInt() {
+      return 0;
+    }
 
 }
