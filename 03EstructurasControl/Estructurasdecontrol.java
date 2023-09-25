@@ -68,8 +68,9 @@ class EstructurasControl{
                     //menu
                     switch(opcion){
                            case 1:
-
-                           System.out.println("El Total de su Compra es: " +compra1);
+                           System.out.println("Ingrese el total de su compra:");
+                           compra = entrada.nextFloat();
+                           System.out.println("El Total de su Compra es: " +compra);
                            System.out.println("Se Aplica un Descuento si es Mayor de Edad o Socio");
                            System.out.println("Ingrese su Edad: ");
                            edad = entrada.nextInt();
@@ -84,17 +85,17 @@ class EstructurasControl{
 
                             if(opcion == 1){
                            System.out.println("El Cliente: "+ letra+" Se le Aplica el Descuento del 45%");
-                           total = (float) (compra1 * 0.45);
+                           total = (float) (compra * 0.45);
                            System.out.println("Su Total con Descuento es: " + total);
                            }else if(opcion == 2){
                            System.out.println("Los Padres del Cliente: "+ letra +" No son Socios");
                            System.out.println("Por lo cual solo se Aplicara el Descuento del 25%");
-                            total = (compra1 * 0.25);
+                            total = (compra * 0.25);
                            System.out.println("Su Total con Descuento es: "+ total);
                            }
                            }else if(edad >= 65){
                            System.out.println("Al Cliente: "+letra+" Se le Aplicara un Descuento del 40%");
-                           total = (compra1 * 0.40);
+                           total = (compra * 0.40);
                            System.out.println("Su Total con Descuento es: "+total);
 
                            }else if(edad > 21 && edad < 65){
@@ -105,44 +106,40 @@ class EstructurasControl{
 
                            if(opcion == 1){
                            System.out.println("El Cliente: "+ letra+" Se le Aplica el Descuento del 45%");
-                            total = compra1 * 0.45;
+                            total = compra * 0.45;
                            System.out.println("Su Total con Descuento es: "+total);
                            }else if(opcion == 2){
                            System.out.println("Los Padres del Cliente: "+letra+" No son Socios");
                            System.out.println("Por lo cual solo se Aplicara el Descuento del 25%");
-                           total = compra1 * 0.25;
+                           total = compra * 0.25;
                            System.out.println("Su Total con Descuento es: " +total);
                            }
                            }
                              break;
                              case 2:
- 
                               //decimal a binario
-                              System.out.println("Ingresa un Numero Positivo Entero que Desee Convertir a Binario");
-                              numbinario = entrada.nextInt();
-                               //primero tengo que saber que sea positivo
-                               if(numbinario > 0){
-                                //se cuantas veces el numero se va a dividir entre 2?
-                                 while (numbinario%2 == 0){
-
-                                if(numbinario%2 == 0);{
-                                   binario = "0" + binario;
-                                
-                                   binario = "1" + binario;
-                                }
-                                numbinario = (int)numbinario/2;
-                     
+                             System.out.println("Ingresa un Numero Positivo Entero que Desee Convertir a Binario");
+                             numbinario = entrada.nextInt();
+                             //primero tengo que saber que sea positivo
+                             if(numbinario > 0){
+                             //se cuantas veces el numero se va a dividir entre 2?
+                             while (numbinario%2 == 0){
+                             if(numbinario%2 == 0);{
+                             binario = "0" + binario;
+                           
+                             binario = "1" + binario;
+                             }
+                             numbinario = (int)numbinario/2;
                              }
    
-                          }else if(numbinario == 0 ){
-                              binario = "0" + binario;
-                          }else if(numbinario <= 0){
-                             binario = ("No se puede convertir un  numero negativo solo positivo") ; 
-                          } 
-                          System.out.println("el numero binario es: " + binario);
-                        
-                        break;
-                        case 3:
+                             }else if(numbinario == 0 ){
+                             binario = "0" + binario;
+                             }else if(numbinario <= 0){
+                             binario = ("No se puede convertir un  numero negativo solo positivo");
+                             } 
+                              System.out.println("el numero binario es: " + binario);                            
+                              break;
+                               case 3:
 
                         System.out.print("Ingrese la temperatura en grados Fahrenheit: ");
                         Fahrenheit = entrada.nextInt();
