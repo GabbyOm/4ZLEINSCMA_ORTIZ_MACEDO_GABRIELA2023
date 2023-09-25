@@ -1,4 +1,6 @@
-/*
+/*es declarar a las variables que se van a utilizar en el programa 
+      las variables son de dos tipos globales y locales
+      si la declaro dentro del metodo es local
   * vamos a crear un programa mediante el cual debebamos tener un meno
   de seleccion para elegir alguna de las 14 opciones siguientes:
   1- Bono o descuento por edad
@@ -35,13 +37,15 @@ class EstructurasControl{
         Scanner entrada = new Scanner(System.in)) {
             int lado1, lado2, lado3, radio, radio1, volumen, radio2, cilindro=0, radio3, altura2=0, area1, base1,altura1, perimetro1;
             int opcion, numbinario, cantidadproducto, num1, compra1=0, edad, n1=0, n2=0, n3=0, n4=0, area, perimetro, base, altura=0;
-            double total; ;
+            int numero=0, factorial=1, figurah;
+            double total;
               float precio, resultado = 0, compra = 0, Celsius, Fahrenheit;
               double Kelvin;
               double Rankine;
               String nombreproducto;
               String binario = "";
               char letra;
+              float cant1, cant2, sum;
 
               
               do{
@@ -287,17 +291,102 @@ class EstructurasControl{
                              case 7:
                              break;
                              case 8:
-                             break;
+
+                             System.out.println("Ingrese un numero a calcular su factorial ");
+                             numero = entrada.nextInt();
+                            
+                             for(int i=numero;i>=1;i--){
+                              factorial = factorial*i;
+                               }
+
+                              int i=0;
+                                System.out.println("El factorial de su numero..."  + numero+   "...es: "  +  factorial );
+                                 break;
                              case 9:
                              break;
                              case 10:
-                             break;
+
+                             System.out.println("Ingrese el tamaño de la figura hueca:");
+                             figurah =entrada.nextInt();
+
+                             if( figurah>= 0 && figurah<= 50);
+                                   for(int f=0; f<figurah; f++){
+                                    System.out.print("*");
+
+                                   }
+                                   System.out.println();
+
+                                   for(int f =0; f<figurah-2; f++){
+                                    System.out.print("*");
+                                    for(int g=0; g<figurah-2; g++){
+                                      System.out.print (" ");
+                                    }
+                                    System.out.println("*");
+                                   }
+
+                                    for(int f=0; f<figurah; f++){
+                                    System.out.print("*");
+                                    }
+                                  break;
                              case 11: 
                              break;
                              case 12:
                              break;
-                             case 13: 
+                             case 13:
+                             
+                             System.out.println("Bienvenido a la calculadora de Gaby :)");
+                             System.out.println("1. Si deseas hacer una suma.");
+                             System.out.println("2. Si deseas hacer una resta.");
+                             System.out.println("3. Si deseas hacer una multiplicacion.");
+                             System.out.println("4. Si deseas hacer una division.");
+
+                             System.out.print("Ingrese 1, 2, 3 o 4 dependiendo lo que desea elegir:");
+                             int opc= entrada.nextInt();
+
+                             if(opc == 1){
+                             System.out.println("Usted eligio hacer una suma");
+                             System.out.println("Ingrese su primer cantidad o numero: ");
+                             cant1 = entrada.nextFloat();
+                             System.out.println("Ingrese su segunda cantidad o numero: ");
+                             cant2 = entrada.nextFloat();
+                             sum =(cant1 + cant2);
+                             System.out.println("El resultado de su suma es...: " +sum );
                              break;
+                             }
+
+                             if(opc == 2){
+                             System.out.println("Usted eligio hacer una resta");
+                             System.out.println("Ingrese su primer cantidad o numero: ");
+                             cant1 = entrada.nextFloat();
+                             System.out.println("Ingrese su segunda cantidad o numero: ");
+                             cant2 = entrada.nextFloat();
+                             float rest = (cant1 - cant2);
+                             System.out.println("El resultado de su resta es...: " +rest);
+                             break;
+                             }
+                 
+                             if(opc == 3){
+                             System.out.println("Usted eligio hacer una multiplicacion");
+                             System.out.println("Ingrese su primer cantidad o numero: ");
+                             cant1 = entrada.nextFloat();
+                             System.out.println("Ingrese su segunda cantidad o numero: ");
+                             cant2 = entrada.nextFloat();
+                             float mult = (cant1 * cant2);
+                             System.out.println("El resultado de su multiplicacion es...: " +mult);
+                             break;
+                             }
+
+                             if(opc == 4){
+                             System.out.println("Usted eligio hacer una division");
+                             System.out.println("Ingrese su primer cantidad o numero: ");
+                             cant1 = entrada.nextFloat();
+                             System.out.println("Ingrese su segunda cantidad o numero: ");
+                             cant2 = entrada.nextFloat();
+                             float div = (cant1 / cant2);
+                             System.out.println("El resultado de su division es...: " +div);
+                             break;
+                             }
+
                              case 14:
                              break;
                              default:
@@ -315,12 +404,12 @@ class EstructurasControl{
                              }while(letra == 's' || letra == 'S');
         }
 
-      //es declarar a las variables que se van a utilizar en el programa 
-      //las variables son de dos tipos globales y locales
-      //si la declaro dentro del metodo es local
 
      }
 
+    /**
+     * @return
+     */
     private static int nextInt() {
       return 0;
     }
