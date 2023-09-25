@@ -118,26 +118,27 @@ class EstructurasControl{
                              break;
                              case 2:
                               //decimal a binario
-                             System.out.println("Ingresa un Numero Positivo Entero que Desee Convertir a Binario");
-                             numbinario = entrada.nextInt();
-                             //primero tengo que saber que sea positivo
-                             if(numbinario > 0){
-                             //se cuantas veces el numero se va a dividir entre 2?
-                             while (numbinario%2 == 0){
-                             if(numbinario%2 == 0);{
-                             binario = "0" + binario;
-                           
-                             binario = "1" + binario;
-                             }
-                             numbinario = (int)numbinario/2;
-                             }
-   
-                             }else if(numbinario == 0 ){
-                             binario = "0" + binario;
-                             }else if(numbinario <= 0){
-                             binario = ("No se puede convertir un  numero negativo solo positivo");
-                             } 
-                              System.out.println("el numero binario es: " + binario);                            
+                    System.out.println("Ingresa un numero positivo entero que desee convertir a binario");
+                    numbinario = entrada.nextInt();
+                    //primero tengo que saber que sea positivo
+                    if(numbinario > 0){
+                        //se cuantas veces el numero se va a dividir entre 2
+                        while(numbinario > 0){
+                            if(numbinario%2 == 0){
+                                binario = "0" + binario;
+                        }else{
+                            binario = "1" + binario;
+                        }
+                        numbinario = (int)numbinario/2;
+                    }    
+
+                    }else if(numbinario == 0 ){
+                        binario = "0" + binario;
+
+                    }else if(numbinario < 0){
+                        binario = "No se puede convertir un numero negativo, solo positivos";
+                    }
+                    System.out.println("El numero binario es: " + binario);                            
                               break;
                                case 3:
 
