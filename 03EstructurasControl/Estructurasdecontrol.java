@@ -1,6 +1,6 @@
 /*es declarar a las variables que se van a utilizar en el programa 
-      las variables son de dos tipos globales y locales
-      si la declaro dentro del metodo es local
+  las variables son de dos tipos globales y locales
+ si la declaro dentro del metodo es local
   * vamos a crear un programa mediante el cual debebamos tener un meno
   de seleccion para elegir alguna de las 14 opciones siguientes:
   1- Bono o descuento por edad
@@ -37,7 +37,7 @@ class EstructurasControl{
         Scanner entrada = new Scanner(System.in)) {
             int lado1, lado2, lado3, radio, radio1, volumen, radio2, cilindro=0, radio3, altura2=0, area1, base1,altura1, perimetro1;
             int opcion, numbinario, cantidadproducto, num1, compra1=0, edad, n1=0, n2=0, n3=0, n4=0, area, perimetro, base, altura=0;
-            int numero=0, factorial=1, figurah;
+            int numero=0, factorial=1, figurah=0, num2=0;
             double total;
               float precio, resultado = 0, compra = 0, Celsius, Fahrenheit;
               double Kelvin;
@@ -196,13 +196,13 @@ class EstructurasControl{
 
                          }else if(n <= 0){
                          System.out.println("La Cantidad Ingresada es Incorrecta");
-                         System.out.println("Vuelva a Ingresar UNA Cantidad Correcta");
+                         System.out.println("Vuelva a Ingresar una Cantidad Correcta");
                          }
                         break;
                         case 5:
 
                         System.out.println("Bienvenido a la tiendita");
-                       System.out.println("POr favor ingrese el mumero de productos que va a comprar:");
+                       System.out.println("Por favor ingrese el numero de productos que va a comprar:");
                        total = entrada.nextInt();
 
                        for( int i = 1; i <=total; i++){
@@ -289,6 +289,13 @@ class EstructurasControl{
                               break;
                            } 
                              case 7:
+                             //vamos a imprimir una tabla
+                             //un ciclo for
+
+                             int t;
+                             for(t=1; t<=10; t++){
+                               System.out.println(t + " "+ (t*10) + " "+ (t*100) + " "+ (t*1000)+ " ");
+                             }
                              break;
                              case 8:
 
@@ -303,6 +310,23 @@ class EstructurasControl{
                                 System.out.println("El factorial de su numero..."  + numero+   "...es: "  +  factorial );
                                  break;
                              case 9:
+                              System.out.println("Cuadrado magico");
+                              System.out.println("Ingrese el tamaño del cuadrado a pintar: ");
+                              num1= entrada.nextInt();
+
+                              if(num1>= 1 && num1<=20){
+                                //definir un ciclo para columnas
+                                for(int c=1; c<= num1; c++){
+                                  //imprimir columnas
+                                  for (int g =1; g<= num1; g++){
+                                    System.out.print("*");
+                                  }
+                                  System.out.println("");
+                                }
+                              }else{
+                                System.out.println("Ingrese solo numeros entre el 1 y 20: ");
+                              }
+
                              break;
                              case 10:
 
@@ -329,7 +353,12 @@ class EstructurasControl{
                                     }
                                   break;
                              case 11: 
-                             break;
+                             System.out.println("Patrones de codigo ");
+                             System.out.println("Dijite 1 para continuar: ");
+                             numero= entrada.nextInt();
+
+                             
+                                  break;
                              case 12:
                              break;
                              case 13:
@@ -392,12 +421,8 @@ class EstructurasControl{
                              default:
                              System.out.println("Elije la opcion");
                               break;
-
-
-
                             }
                   
-
                              System.out.println("Desea repetir el programa?, escribe s para si");
                               letra = entrada.next().charAt(0);
 
