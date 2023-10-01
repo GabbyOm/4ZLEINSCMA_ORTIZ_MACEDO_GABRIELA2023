@@ -38,15 +38,76 @@ class Ejercicios{
             default:
               System.out.println("Graciaaaaaas por jugar >.<");
         }
+     }
+
+    public void Ejercicio1() {
+      //se le llaman metodos vacios porque no poseen argumentos y no son metodos 
+      //o funciones que necesiten una entrada o una salida de algun tipo de dato
+
+      //calculadora
+      double num1=0.00, num2=0.00, suma=0.00, multi=1.00, div=0.00;
+      char operacion;
+
+      System.out.println("Selecciona la operacion que deseas realizar: ");
+      System.out.println("a.- Suma y Resta");
+      System.out.println("b.- Multiplicacion");
+      System.out.println("c.- Division");
+
+      operacion=entrada.next().charAt(0);
+
+      switch(operacion){
+        case 'a':
+        //vamos a sumar o restar tantos numeros como desee el usuario
+        //cuando coloque cero la operacion termina
+        System.out.println("Para detener la suma o resta, ingrese el 0");
+        do{
+          System.out.println("Escriba el numero que desea sumar o restar: ");
+          num1=entrada.nextDouble();
+          suma *= num1;
+          //Suma = suma mas num1
+        }while(num1 !=0);
+        System.out.println("El resultado de la operacion es: " +suma);
+        break;
+        case 'b':
+        System.out.println("Para detener la multiplicacion, ingrese 0");
+
+        do{
+          System.out.println("Escriba el numero que desee multiplicar: ");
+          num1 = entrada.nextDouble();
+          if(num1 != 0){
+            multi *= num1;
+            //multi = multi * multi  
+          }
+       
+        }while(num1 !=0);
+        System.out.println("El resultado de la operacion es: " +multi);
+        break;
+        case 'c':
+         System.out.println("Para detener la division, ingrese 0");
+        do{
+          System.out.println("Ingrese el numero que desee dividir: ");
+          num1 = entrada.nextDouble();
+          if(num1 !=0){
+            div = num1/2;
+          }
+          System.out.println(div);
+          
+        }while(num1 !=0);
+        System.out.println("El resultado de la operacion es: "+ div);
+        break;
+        default: 
+        System.out.println("Opcion no valida");
+      }
 
     }
 
-    public void Ejercicio1(){
-      //vamos a crear un programa que se encargue de convertir 
+    public void Ejercicio2() {
+       //vamos a crear un programa que se encargue de convertir 
       //kg a libras
       // m/s a km/s
       //m a yardas y millas
       double metros=0.00, kg=0.00, velocidad=0.00, cm=100.00, pulgadas=0.0254, gramos=1000, libra=0.453592, ms=0.00;
+      double yardas=1.094, millas=0.000621;
       double conversion1, conversion2;
       System.out.println("Selecciona la cantidad que deseas convertir acorde a las siguientes unidades");
       System.out.println("a.- Metros a cm y pulgadas");
@@ -83,6 +144,12 @@ class Ejercicios{
            +conversion1+ " de m a pulgadas son:" +conversion2);
           break;
         case 'd':
+          System.out.println("Ingrese los metros que desea transformar: ");
+          metros = entrada.nextDouble();
+          conversion1= metros * yardas;
+          conversion2= metros * millas;
+           System.out.println("La cantidad en metros es: " +metros+ "de m a yardas son..." 
+           +conversion1+ " de m a millas son:..." +conversion2);
           break;    
         default:
           System.out.println("Opcion no valida");
@@ -90,15 +157,27 @@ class Ejercicios{
       }
     }
 
-    public void Ejercicio2() {
+    public void Ejercicio3() {
+      System.out.println("Cuadrado magico");
+      System.out.println("Ingrese el tamaño del cuadrado a pintar: ");
+      int num1 = entrada.nextInt();
+
+     if(num1>= 1 && num1<=20){
+      for(int c=1; c<= num1; c++){
+        for (int g =1; g<= num1; g++){
+        System.out.print("*");
+        }
+        System.out.println("");
+      }
+    }else{
+       System.out.println("Ingrese solo numeros entre el 1 y 20: ");
+    }
 
     }
 
-    private void Ejercicio3() {
+    public void Ejercicio4(){
+
 
     }
-
-    private void Ejercicio4() {
-
-    }
-}
+    
+  }

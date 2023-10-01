@@ -69,6 +69,7 @@ class EstructurasControl{
                      opcion = entrada.nextInt();
 
                     int n;
+                    int n5;
                     //menu
                     switch(opcion){
                            case 1:
@@ -301,7 +302,11 @@ class EstructurasControl{
 
                              System.out.println("Ingrese un numero a calcular su factorial ");
                              numero = entrada.nextInt();
-                            
+
+                            if(numero<1){
+                              System.out.println("Ingrese un numero correcto");
+                              numero= entrada.nextInt();
+                            }
                              for(int i=numero;i>=1;i--){
                               factorial = factorial*i;
                                }
@@ -352,14 +357,15 @@ class EstructurasControl{
                                     System.out.print("*");
                                     }
                                   break;
-                             case 11: 
-                             System.out.println("Patrones de codigo ");
-                             System.out.println("Dijite 1 para continuar: ");
-                             numero= entrada.nextInt();
-
-                             
-                                  break;
+                             case 11:
+                             break;
                              case 12:
+              
+                              System.out.println("Diamante :)");
+                              System.out.println("Ingrese un numero: ");
+                              num1= entrada.nextInt();
+
+                              
                              break;
                              case 13:
                              
