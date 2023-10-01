@@ -159,19 +159,6 @@ class Ejercicios{
 
     public void Ejercicio3() {
       System.out.println("Cuadrado magico");
-      System.out.println("Ingrese el tamaño del cuadrado a pintar: ");
-      int num1 = entrada.nextInt();
-
-     if(num1>= 1 && num1<=20){
-      for(int c=1; c<= num1; c++){
-        for (int g =1; g<= num1; g++){
-        System.out.print("*");
-        }
-        System.out.println("");
-      }
-    }else{
-       System.out.println("Ingrese solo numeros entre el 1 y 20: ");
-    }
 
     }
 

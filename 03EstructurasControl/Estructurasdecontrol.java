@@ -35,11 +35,11 @@ class EstructurasControl{
               //2-nombrar al objeto
               //3-Crear al objeto
         Scanner entrada = new Scanner(System.in)) {
-            int lado1, lado2, lado3, radio, radio1, volumen, radio2, cilindro=0, radio3, altura2=0, area1, base1,altura1, perimetro1;
+            int r=0, o=0,lado1, lado2, lado3, radio, radio1, volumen, radio2, cilindro=0, radio3, altura2=0, area1, base1,altura1, perimetro1;
             int opcion, numbinario, cantidadproducto, num1, compra1=0, edad, n1=0, n2=0, n3=0, n4=0, area, perimetro, base, altura=0;
             int numero=0, factorial=1, figurah=0, num2=0;
             double total;
-              float precio, resultado = 0, compra = 0, Celsius, Fahrenheit;
+              float precio, resultado = 0, compra = 0, Celsius, Fahrenheit=0;
               double Kelvin;
               double Rankine;
               String nombreproducto;
@@ -146,32 +146,58 @@ class EstructurasControl{
                     System.out.println("El numero binario es: " + binario);                            
                               break;
                                case 3:
+                    System.out.println("1.- Convertir de Celcius a Fahrenheit, Celcius a Kelvine, Celcius a Rankine");
+                    System.out.println("2.- Convertir de Fahrenheit a Celcius, Fahrenheit a Kelvine, Fahrenheit a Rankine");
+                    System.out.println("3.- Convertir de Kelvine a Celcius, Kelvine a Fahrenheit, Kelvine a Rankine");
+                    System.out.println("4.- Convertir de Rankine a Celcius, Rankine a Fahrenheit, Rankine a Kelvine");
+                    opcion = entrada.nextInt();
 
-                        System.out.print("Ingrese la temperatura en grados Fahrenheit: ");
-                        Fahrenheit = entrada.nextInt();
-                        System.out.println("Elija la conversión deseada:");
-                        System.out.println("1. Fahrenheit a Celsius");
-                        System.out.println("2. Fahrenheit a Kelvin");
-                        System.out.println("3. Fahrenheit a Rankine");
-                        int conversion = entrada.nextInt();
+                        float gradosC;
+                        float gradosF;
+                        float gradosK;
+                        float gradosR;
+                        if(opcion == 1){
+                      System.out.println("Ingrese el numero de grados Celcius para convertir");
+                      gradosC = entrada.nextInt();
+                      gradosF = (float) (1.8 * gradosC + 32);
+                      gradosK = (float) (273.15 + gradosC);
+                      gradosR = (float) (1.8 * gradosC + 491.67);
+                      System.out.println("Los grados fahrenheit son: "+gradosF+"°");
+                      System.out.println("Los grados kelvine son: "+gradosK+"°");
+                      System.out.println("Los grados rankine son: "+gradosR+"°");
 
-                        switch (conversion) {
-                        case 15:
-                            Celsius = (Fahrenheit - 32) * 5 / 9;
-                            System.out.println("La temperatura en grados Celsius es: " + Celsius);
-                            break;
-                        case 16:
-                            Kelvin = ((Fahrenheit - 32) * 5 / 9 + 273.15);
-                            System.out.println("La temperatura en Kelvin es: " + Kelvin);
-                            break;
-                        case 17:
-                            Rankine = Fahrenheit + 459.67;
-                            System.out.println("La temperatura en Rankine es: " + Rankine);
-                            break;
-                        default:
-                            System.out.println("Opción no válida.");
-                            break;
-                             }
+                    }else if(opcion == 2){
+                     System.out.println("Ingrese el numero de grados Fahrenheit a convertir");
+                     gradosF = entrada.nextFloat();
+                     gradosC = (float) (gradosF - 32 / 1.8);
+                     gradosK = (float) (((gradosF - 32) / 1.8) + 273.15);
+                     gradosR = (float) (gradosF + 459.67);
+                     System.out.println("Los grados celcius son: "+gradosC+"°");
+                     System.out.println("Los grados kelvine son: "+gradosK+"°");
+                     System.out.println("Los grados rankine son: "+gradosR+"°");
+
+                    }else if(opcion == 3){
+                     System.out.println("Ingrese el numero de grados kelvine a convertir");
+                     gradosK = entrada.nextFloat();
+                     gradosC = (float) (gradosK - 273.15);
+                     gradosF = (float) (((gradosK - 273.15) * 1.8) + 32);
+                     gradosR = (float) (1.8 * gradosK);
+                     System.out.println("Los grados celcius son: "+gradosC+"°");
+                     System.out.println("Los grados fahrenheit son: "+gradosF+"°");
+                     System.out.println("Los grados rankine son: "+gradosR+"°");
+
+                    }else if(opcion == 4){
+                     System.out.println("Ingrese el numero de grados rankine a convertir");
+                     gradosR = entrada.nextFloat();
+                     gradosC = (float) (5/9 * (gradosR - 491.67));
+                     gradosF = (float) (gradosR - 459.67);
+                     gradosK = 5/9 * (gradosR);
+                     System.out.println("Los grados celcius son: "+gradosC+"°");
+                     System.out.println("Los grados fahrenheit son: "+gradosF+"°");
+                     System.out.println("Los grados rankine son: "+gradosK+"°");
+                    }
+                    break;
+                            
                         case 4:
 
                           System.out.println("Digite la Cantidad de Numeros que va a Ingresar");
@@ -224,10 +250,10 @@ class EstructurasControl{
                         
                       case 6:
                            
-                             System.out.print("1.- Area y perimetro de un rectangulo.");
-                             System.out.print("2.- Area y perimetro de un triangulo.");
-                             System.out.print("3.- Volumen de una esfera.");
-                             System.out.print("4.- Volumen de un cilindro.");
+                             System.out.println("1.- Area y perimetro de un rectangulo.");
+                             System.out.println("2.- Area y perimetro de un triangulo.");
+                             System.out.println("3.- Volumen de una esfera.");
+                             System.out.println("4.- Volumen de un cilindro.");
                          
                              System.out.print("Ingrese 1, 2, 3 o 4 dependiendo lo que desea elegir:");
                              int eleccion = entrada.nextInt();
@@ -358,15 +384,43 @@ class EstructurasControl{
                                     }
                                   break;
                              case 11:
+                             System.out.println("Patrones de codigo");
+                             System.out.printf("%s%s%s%s%s%s%s%s%n","*","*","*","*","*","*","*","*");
+                             System.out.printf("%2s%s%s%s%s%s%s%s%n","*","*","*","*","*","*","*","*");
+                             System.out.printf("%s%s%s%s%s%s%s%s%n","*","*","*","*","*","*","*","*");
+                             System.out.printf("%2s%s%s%s%s%s%s%s%n","*","*","*","*","*","*","*","*");
+                             System.out.printf("%s%s%s%s%s%s%s%s%n","*","*","*","*","*","*","*","*");
+                             System.out.printf("%2s%s%s%s%s%s%s%s%n","*","*","*","*","*","*","*","*");
+                             System.out.printf("%s%s%s%s%s%s%s%s%n","*","*","*","*","*","*","*","*");
+                             System.out.printf("%2s%s%s%s%s%s%s%s%n","*","*","*","*","*","*","*","*");
+                             
                              break;
                              case 12:
-              
                               System.out.println("Diamante :)");
-                              System.out.println("Ingrese un numero: ");
-                              num1= entrada.nextInt();
+                             final int n9 = 5;
+ 
+                              for ( o = 1; o <= n9; o++)
+                               {
+                              for (int j = o; j < n9; j++) {
+                               System.out.print(' ');
+                              }
+                              for (int k = 1; k < 2*o; k++) {
+                               System.out.print('*');
+                                 }
+                               System.out.print(System.lineSeparator());
+                              }
+                              for ( o = n9 - 1; o >= 1; o--)
+                              {
+                              for (int j = n9; j > o; j--) {
+                                System.out.print(' ');
+                              }
+                              for (int k = 1; k < (o * 2); k++) {
+                               System.out.print('*');
+                              }
+                               System.out.print(System.lineSeparator());
+                              }
+                               break;
 
-                              
-                             break;
                              case 13:
                              
                              System.out.println("Bienvenido a la calculadora de Gaby :)");
