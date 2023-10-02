@@ -35,7 +35,7 @@ class EstructurasControl{
               //2-nombrar al objeto
               //3-Crear al objeto
         Scanner entrada = new Scanner(System.in)) {
-            int r=0, o=0,lado1, lado2, lado3, radio, radio1, volumen, radio2, cilindro=0, radio3, altura2=0, area1, base1,altura1, perimetro1;
+            int  factorial1=0,r=0, o=0,lado1, lado2, lado3, radio, radio1, volumen, radio2, cilindro=0, radio3, altura2=0, area1, base1,altura1, perimetro1;
             int opcion, numbinario, cantidadproducto, num1, compra1=0, edad, n1=0, n2=0, n3=0, n4=0, area, perimetro, base, altura=0;
             int numero=0, factorial=1, figurah=0, num2=0;
             double total;
@@ -275,19 +275,19 @@ class EstructurasControl{
 
                             if (eleccion == 2){
                               System.out.println("Usted eligio la opcion 2");
-                             System.out.println("Ingrese la medida del primer lado del tringulo:");
+                             System.out.println("Ingrese la medida del primer lado del tringulo isoceles:");
                              lado1= entrada.nextInt();
                               System.out.println("Ingrese la medida del segundo lado del tringulo:");
                              lado2= entrada.nextInt();
                              System.out.println("Ingrese la medida de la base del tringulo:");
                              base = entrada.nextInt();
-                             System.out.println("Ingrese la altura del triangulo: ");
+                             System.out.println("Ingrese la altura del triangulo isoceles: ");
                              int altura3 = entrada.nextInt();
 
                              area = (base * altura3) /2;
                              perimetro = (lado1+ lado2+ base);
-                              System.out.println("El area del rectangulo es :" +area+" cm2");
-                             System.out.println("El perimetro del rectangulo es:" +perimetro+ "cm");
+                              System.out.println("El area del triangulo isoceles es :" +area+" cm2");
+                             System.out.println("El perimetro del triangulo isoceles es:" +perimetro+ "cm");
                              break;
                             }
                             
@@ -326,19 +326,23 @@ class EstructurasControl{
                              break;
                              case 8:
 
-                             System.out.println("Ingrese un numero a calcular su factorial ");
+                             System.out.println("Ingrese un numero positivo a calcular su factorial ");
                              numero = entrada.nextInt();
 
-                            if(numero<1){
-                              System.out.println("Ingrese un numero correcto");
+                            if(numero<0){
+                              System.out.println("Ingrese un numero correcto: ");
                               numero= entrada.nextInt();
+                            } else{
+                            
+                              factorial1 = 1;
                             }
-                             for(int i=numero;i>=1;i--){
-                              factorial = factorial*i;
+                             for(int i=1; i<=numero;i++){
+                              factorial1 = factorial1*i;
                                }
-
-                              int i=0;
-                                System.out.println("El factorial de su numero..."  + numero+   "...es: "  +  factorial );
+                              int i=1;
+                         
+                        System.out.println("El factorial de su numero..."  + numero+   "...es: "  +  factorial1 );
+                               
                                  break;
                              case 9:
                               System.out.println("Cuadrado magico");

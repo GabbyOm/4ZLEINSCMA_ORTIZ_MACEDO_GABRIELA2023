@@ -158,7 +158,6 @@ class Ejercicios{
     }
 
     public void Ejercicio3() {
-      System.out.println("Cuadrado magico");
 
     }
 
